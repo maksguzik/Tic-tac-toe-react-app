@@ -1,0 +1,63 @@
+#Text{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:50px;
+    color:rgb(226, 43, 144);
+}
+
+.Tic_Tac_Toe{
+    width:400px;
+    height:400px;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    background-color:rgb(0, 255, 170);
+    border:2px solid rgb(0, 0, 0);
+}
+
+.Container{
+    width:400px;
+    height:400px;
+    border-radius:10px;
+    background-color:rgb(255, 230, 0);
+    border:2px solid rgb(23, 94, 1);
+}
+
+.Block{
+    width:380px;
+    height:380px;
+    margin:10px;
+}
+
+.Row{
+    width:380px;
+    height:125px;
+    border-bottom:2.5px solid black;
+}
+
+#Third_row{
+    border:none;
+}
+
+.Element{
+    width:125px;
+    height:125px;
+    border-right:2.5px solid black;
+    float:left;
+    font-size:100px;
+}
+
+.Element_diff{
+    width:125px;
+    height:125px;
+    float:left;
+    font-size:100px;
+}
+
+.Result{
+    height:80px;
+    text-align: center;
+    font-size:60px;
+    color:rgb(226, 43, 144);
+    margin-top:10px;
+}
