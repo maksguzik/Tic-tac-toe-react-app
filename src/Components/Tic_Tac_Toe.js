@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './Style.css'
 import Element from './Validator.js'
 
-let Main_component = () =>{
+let MainComponent = () =>{
 
     let [change,setChange] = useState({
         list : ["","","","","","","","",""],
@@ -10,7 +10,7 @@ let Main_component = () =>{
         turn : true,
     });
 
-    let [winner,setWinner] = useState("Your turn");
+    let [winner,setWinner] = useState("Start play");
 
     function Sleep(time){
         return new Promise((resolve)=>setTimeout(resolve,time));
@@ -20,8 +20,16 @@ let Main_component = () =>{
         if(change.list[0].length>0 && change.list[1]===change.list[2] && change.list[0]===change.list[1]){
             if(change.list[0]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -30,12 +38,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[3].length>0 && change.list[4]===change.list[5] && change.list[3]===change.list[4]){
             if(change.list[3]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -44,12 +60,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[6].length>0 && change.list[7]===change.list[8] && change.list[6]===change.list[7]){
             if(change.list[6]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -58,12 +82,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[0].length>0 && change.list[3]===change.list[6] && change.list[3]===change.list[0]){
             if(change.list[0]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -72,12 +104,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[1].length>0 && change.list[4]===change.list[7] && change.list[1]===change.list[4]){
             if(change.list[1]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -86,12 +126,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[2].length>0 && change.list[5]===change.list[8] && change.list[2]===change.list[5]){
             if(change.list[2]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -100,12 +148,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[0].length>0 && change.list[4]===change.list[8] && change.list[4]===change.list[0]){
             if(change.list[0]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -114,12 +170,20 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }else if(change.list[2].length>0 && change.list[4]===change.list[6] && change.list[4]===change.list[2]){
             if(change.list[2]==="X"){
                 setWinner("You won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }else{
                 setWinner("PC won");
+                setChange({
+                    ...change,
+                    turn : true,
+                })
             }
             await Sleep(1500);
             setChange({
@@ -128,12 +192,12 @@ let Main_component = () =>{
                 mark : "X",
                 turn : true, 
             });
-            setWinner("Your turn");
+            setWinner("Start play");
         }
     }
 
     async function GetPCturn (){
-        await Sleep(1500);
+        await Sleep(1800);
         let empty_idx = change.list.map((element,idx)=>element=(element.length===0)? idx : -1)
         .filter((element)=>element!==-1);
         let index_from_empty = Math.floor(Math.random() * empty_idx.length);
@@ -146,17 +210,19 @@ let Main_component = () =>{
     }
 
     let ClickHandler = (element) =>{
-        setChange({
-            ...change,
-            list : change.list.map((value,idx)=>(idx===element && value.length===0) ? change.mark:value),
-            mark : "O",
-            turn : false,
-        });
+        if(change.turn===true){
+            setChange({
+                ...change,
+                list : change.list.map((value,idx)=>(idx===element && value.length===0) ? change.mark:value),
+                mark : "O",
+                turn : false,
+            });
+        }
     }
 
     async function TurnHandler(){
         if(!change.turn){
-            if(winner==="Your turn"){
+            if(winner==="Your turn" || "Start play"){
                 GetPCturn();
                 setWinner("PC turn");
             }else{
@@ -175,7 +241,6 @@ let Main_component = () =>{
     useEffect(
         ()=>{
             const WinnInfo = async event =>{
-                await Sleep(1500);
                 CheckWinner();
             }
             WinnInfo();
@@ -212,4 +277,4 @@ let Main_component = () =>{
     )
 }
 
-export default Main_component;
+export default MainComponent;
