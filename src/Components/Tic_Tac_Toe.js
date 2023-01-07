@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './Style.css'
 import Element from './Validator.js'
 
 let MainComponent = () =>{
