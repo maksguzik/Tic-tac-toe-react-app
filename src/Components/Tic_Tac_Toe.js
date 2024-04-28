@@ -30,7 +30,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -52,7 +52,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -74,7 +74,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -96,7 +96,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -118,7 +118,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -140,7 +140,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -162,7 +162,7 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -184,7 +184,15 @@ let MainComponent = () =>{
                     turn : true,
                 })
             }
-            await Sleep(1500);
+            await Sleep(1000);
+            setChange({
+                ...change,
+                list : ["","","","","","","","",""],
+                mark : "X",
+                turn : true, 
+            });
+            setWinner("Start play");
+        }else if(change.list.reduce((acumulator, currentValue) => acumulator + currentValue.length, 0)>=9){
             setChange({
                 ...change,
                 list : ["","","","","","","","",""],
@@ -196,7 +204,7 @@ let MainComponent = () =>{
     }
 
     async function GetPCturn (){
-        await Sleep(1800);
+        await Sleep(300);
         let empty_idx = change.list.map((element,idx)=>element=(element.length===0)? idx : -1)
         .filter((element)=>element!==-1);
         let index_from_empty = Math.floor(Math.random() * empty_idx.length);
@@ -225,14 +233,14 @@ let MainComponent = () =>{
                 GetPCturn();
                 setWinner("PC turn");
             }else{
-                await Sleep(1500);
+                // await Sleep(1000);
             }
         }
         if(change.turn){
             if(winner==="PC turn"){
                 setWinner("Your turn");
             }else{
-                await Sleep(1500);
+                // await Sleep(1000);
             }
         }
     }
